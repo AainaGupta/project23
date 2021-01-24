@@ -76,12 +76,17 @@ function draw() {
   packageSprite.y= packageBody.position.y 
   if(keydown("left")){
 	helicopterSprite.x=helicopterSprite.x-4
+	  translation=(x:-4,y:0);
+	  Matter.Body.translate(packageBody,tanslation);
   }
  if(keydown("right")){
 	helicopterSprite.x=helicopterSprite.x+4
+	 translation=(x:4,y:0); 
+	  Matter.Body.translate(packageBody,tanslation);
+  }
  }
  if(keydown("down")){
-	 parcelSprite.y=parcelSprite.y+4;
+	 Matter.Body.setStatic(packageBody,false);
  }
  
   
